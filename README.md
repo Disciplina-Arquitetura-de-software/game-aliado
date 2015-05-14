@@ -2,6 +2,6 @@
 
 [Descrição do jogo](https://github.com/Disciplina-Arquitetura-de-software/game-aliado/wiki/Home)
 
-[Definição das tecnologias](Requisitos)
+[Definição das tecnologias](https://github.com/Disciplina-Arquitetura-de-software/game-aliado/wiki/Requisitos)
 
-[Arquitetura do sistemas](Arquitetura)
+[Arquitetura do sistemas](https://github.com/Disciplina-Arquitetura-de-software/game-aliado/wiki/Arquitetura)
