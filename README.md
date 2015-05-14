@@ -1,6 +1,6 @@
 # Jogo Aliado
 
-[Descrição do jogo](home)
+[Descrição do jogo](https://github.com/Disciplina-Arquitetura-de-software/game-aliado/wiki/Home)
 
 [Definição das tecnologias](Requisitos)
 
