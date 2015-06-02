@@ -7,3 +7,5 @@
 [Definição das tecnologias](https://github.com/Disciplina-Arquitetura-de-software/game-aliado/wiki/Requisitos)
 
 [Arquitetura do sistemas](https://github.com/Disciplina-Arquitetura-de-software/game-aliado/wiki/Arquitetura)
+
+[Histórico de iteração](https://github.com/Disciplina-Arquitetura-de-software/game-aliado/wiki/Iteracoes)
