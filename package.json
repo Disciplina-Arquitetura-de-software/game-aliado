@@ -1,0 +1,32 @@
+{
+  "name": "aliado",
+  "version": "1.0.0",
+  "description": "Projeto exemplo da disciplina arquitetura de software de 2015.1",
+  "main": "index.js",
+
+  "scripts": {
+    "servidor-inicie": "node src/api.js",
+    "inicialize": "npm install express jscs jshint istanbul mocha supertest --save",
+    "teste": "node_modules/.bin/mocha"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Disciplina-Arquitetura-de-software/game-aliado.git"
+  },
+
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Disciplina-Arquitetura-de-software/game-aliado/issues"
+  },
+  "homepage": "https://github.com/Disciplina-Arquitetura-de-software/game-aliado#readme",
+  "dependencies": {
+    "express": "^4.12.4",
+    "istanbul": "^0.3.14",
+    "jscs": "^1.13.1",
+    "jshint": "^2.8.0",
+    "mocha": "^2.2.5",
+    "supertest": "^1.0.1"
+  }
+}
