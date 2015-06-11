@@ -21,9 +21,17 @@ app.get('/api/:tabuleiro/', function(req, res) {
             },
             "nome" : req.params.tabuleiro,
             "rodadas": "1",
+            "estado": "indefinido",
             "jogador_da_vez": "0000"
         }
     });
+});
+
+app.get('/api/:tabuleiro/:acao', function(req, res) {
+    if (req.params.acao == 'novo')
+        res.status(200).send('OK');
+    else
+        res.status(404).send('NOK');
 });
 
 var server = app.listen(3000, function () {
