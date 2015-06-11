@@ -5,7 +5,7 @@
   "main": "index.js",
 
   "scripts": {
-    "servidor-inicie": "node src/api.js",
+    "servidor-inicie": "node src/api.js -W",
     "inicialize": "npm install express jscs jshint istanbul mocha supertest --save",
     "teste": "node_modules/.bin/mocha"
   },
