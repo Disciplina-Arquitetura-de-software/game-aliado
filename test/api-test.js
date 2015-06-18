@@ -16,10 +16,11 @@ describe('Teste de ambiente', function () {
 
 describe('Testando o estado de um jogo', function() {
 	var path = '/api/';
+	var tabuleiro_nome = 'exemplo';
 
 	it('Teste de resposta 404 do jogo exemplo nao criado', function(done) {
 		request(url)
-		 	.get(path + 'exemplo/')
+		 	.get(path + tabuleiro_nome + '/')
 		 	.expect(404)
 		 	.end(function(error, response) {
 		 		if (error) return done(error)
@@ -28,40 +29,40 @@ describe('Testando o estado de um jogo', function() {
 	})
 
 	it('Teste de resposta 200 do estado do jogo ao criar um novo jogo', function(done) {
-		var nome = 'exemplo';
-		var acao_novo = '/novo';
-		var acao_estado = '/';
+		var acao = '/novo';
 
 		request(url)
-			.get(path + nome + acao_novo)
+			.get(path + tabuleiro_nome + acao)
 			.expect(200)
 			.end(function(error, response) {
-				if (error) return done(error)
-				done()
+				if (error) return done(error);
+				done();
 			});
 
-	})
+	});
 
-	it('Teste de resposta do estado do jogo ao criar um novo jogo', function(done) {
-		var nome = 'exemplo';
-		var acao_novo = '/novo';
-		var acao_estado = '/';
-
+	it('Teste de resposta do estado do jogo ao criar um novo jogo JSON', function(done) {
+		var acao = '/';
 
 		request(url)
-			.get(path + acao_estado)
-			.expect({
-				"tabuleiro" : {
-					"jogadores" : {},
-					"nome" : "exemplo",
-					"rodadas": "1",
-					"estado": "novo",
-					"jogador_da_vez": "0000"
-				}
-			})
+			.get(path + tabuleiro_nome + acao)
+			.expect(200)
 			.end(function(error, response) {
-				if (error) return done(error)
-				done()
+				if (error) return done(error);
+				done();
 			})
 	})
-})
+
+	it('Teste de resposta do estado do jogo ao criar um novo jogo JSON', function(done) {
+		var acao = '/';
+		var estado_esperado = JSON.stringify({ tabuleiro : { jogadores : {}, nome : "exemplo", rodadas: "1", estado: "novo",jogador_da_vez: "0000"}});
+
+		request(url)
+			.get(path + tabuleiro_nome + acao)
+			.expect(estado_esperado)
+			.end(function(error, response) {
+				if (error) return done(error);
+				done();
+			})
+	});
+});

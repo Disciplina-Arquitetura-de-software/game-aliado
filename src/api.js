@@ -13,34 +13,19 @@ app.get('/', function (req, res) {
 });
 
 app.get('/api/:tabuleiro/', function(req, res) {
-    // res.status(200).json({
-         // "tabuleiro" : {
-            // "jogadores" : {
-                // "0000" : {"Ficha1" : [0,0],"Ficha2" : [0,0],"Ficha3" : [0,0],"Ficha4" : [0,0]},
-                // "0018" : {"Ficha1" : [0,18],"Ficha2" : [0,18],"Ficha3" : [0,18],"Ficha4" : [0,18]},
-                // "1818" : {"Ficha1" : [18,18],"Ficha2" : [18,18],"Ficha3" : [0,0],"Ficha4" : [18,18]},
-                // "1800" : {"Ficha1" : [18,0],"Ficha2" : [18,0],"Ficha3" : [18,0],"Ficha4" : [18,0]}
-            // },
-            // "nome" : req.params.tabuleiro,
-            // "rodadas": "1",
-            // "estado": "indefinido",
-            // "jogador_da_vez": "0000"
-        // }
-    // });
-     
-    for(tab in tabuleiros){
-        if(tab.nome == req.params.tabuleiro){
-            res.status(200).json(tab);
+    for(index in tabuleiros){
+      console.log(tabuleiros[index]);
+        if(tabuleiros[index].nome == req.params.tabuleiro){
+            res.status(200).json(tabuleiros[index]);
             return ;
         }
     }
 
-    res.status(404).send("");
+    res.status(404).json({});
 });
 
 app.get('/api/:tabuleiro/novo', function(req, res) {
-    
-    var tabuleiro_novo = new tabnuleiro();
+    var tabuleiro_novo = new tabuleiro_classe(req.params.tabuleiro);
     tabuleiros.push(tabuleiro_novo);
 
     res.status(200).send('OK');

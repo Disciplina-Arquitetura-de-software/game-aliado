@@ -6,8 +6,8 @@
   "scripts": {
     "servidor-inicie": "node_modules/.bin/supervisor src/api.js",
     "inicialize": "npm install supervisor should express jscs jshint istanbul mocha supertest --save",
-    "teste": "node_modules/.bin/mocha",
-    "teste_model": "node_modules/.bin/mocha test/model"
+    "test": "node_modules/.bin/mocha --recursive --reporter spec",
+    "teste-model": "node_modules/.bin/mocha --recursive --reporter spec test/model"
   },
   "repository": {
     "type": "git",
