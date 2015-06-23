@@ -31,6 +31,13 @@ app.get('/api/:tabuleiro/novo', function(req, res) {
     res.status(200).send('OK');
 });
 
+app.get('/api/:tabuleiro/finalizar', function(req, res) {
+    // var tabuleiro_novo = new tabuleiro_classe(req.params.tabuleiro);
+    // tabuleiros.push(tabuleiro_novo);
+
+    res.status(200).send('OK');
+});
+
 var server = app.listen(3000, function () {
     const host = server.address().address
     const port = server.address().port;

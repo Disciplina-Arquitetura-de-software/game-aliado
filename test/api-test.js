@@ -59,6 +59,27 @@ describe('Testando o estado de um jogo', function() {
 				if (error) return done(error);
 				done();
 			})
-	})
+	});
+
+	it('Teste de resposta do estado do jogo finalizado', function(done) {
+		var acao = '/finalizar';
+		var estado_esperado = {
+         'nome': 'exemplo',
+         'estado': 'finalizado',
+			};
+
+		request(url)
+			.get(path + tabuleiro_nome + acao)
+			.expect(200)
+			// .expect(body)
+			.end(function(error, response) {
+				if (error) return done(error);
+				done();
+			});
+
+			// body.nome.should.be.equal(estado_esperado.nome);
+			// body.estado.should.be.equal(estado_esperado.estado);
+	});
+
 
 });
