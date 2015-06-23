@@ -15,4 +15,23 @@ describe('Teste de Classe Tabuleiro', function () {
 		tabuleiro_novo.should.be.an.instanceOf(Tabuleiro);
 		done();
 	});
+
+  it('verificar a conversão de objetos para JSON', function(done) {
+     var obj_esperado = {
+         'nome': 'exemplo',
+         'estado': 'novo',
+         'jogador_da_vez': '0000',
+         'jogadores': {},
+         'rodadas': 0
+       };
+    var esperado = JSON.stringify(obj_esperado);
+
+    var obj_computado = new Tabuleiro('exemplo');
+    var computado = JSON.stringify(obj_computado);
+
+    computado.should.be.an.instanceOf(String);
+    esperado.should.be.an.instanceOf(String);
+    computado.should.be.equal(esperado);
+    done();
+  });
 });

@@ -1,4 +1,4 @@
-//tabuleiro.js
+// tabuleiro.js
 
 function Tabuleiro(nome) {
 	this.nome = nome;
