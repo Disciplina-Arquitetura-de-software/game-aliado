@@ -43,26 +43,22 @@ describe('Testando o estado de um jogo', function() {
 
 	it('Teste de resposta do estado do jogo ao criar um novo jogo JSON', function(done) {
 		var acao = '/';
+		var estado_esperado = JSON.stringify({
+         'nome': 'exemplo',
+         'estado': 'novo',
+         'jogador_da_vez': '0000',
+         'jogadores': {},
+         'rodadas': 0
+			});
 
 		request(url)
 			.get(path + tabuleiro_nome + acao)
 			.expect(200)
+			.expect(estado_esperado)
 			.end(function(error, response) {
 				if (error) return done(error);
 				done();
 			})
 	})
 
-	it('Teste de resposta do estado do jogo ao criar um novo jogo JSON', function(done) {
-		var acao = '/';
-		var estado_esperado = JSON.stringify({ tabuleiro : { jogadores : {}, nome : "exemplo", rodadas: "1", estado: "novo",jogador_da_vez: "0000"}});
-
-		request(url)
-			.get(path + tabuleiro_nome + acao)
-			.expect(estado_esperado)
-			.end(function(error, response) {
-				if (error) return done(error);
-				done();
-			})
-	});
 });
