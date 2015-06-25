@@ -32,10 +32,16 @@ app.get('/api/:tabuleiro/novo', function(req, res) {
 });
 
 app.get('/api/:tabuleiro/finalizar', function(req, res) {
-    // var tabuleiro_novo = new tabuleiro_classe(req.params.tabuleiro);
-    // tabuleiros.push(tabuleiro_novo);
+    for(index in tabuleiros){
+        if(tabuleiros[index].nome == req.params.tabuleiro) {
+            tabuleiros[index].estado = 'finalizado';
+            res.status(200).json(tabuleiros[index]);
+            tabuleiros.splice(index, 1);
+            return;
+        }
+    }
 
-    res.status(200).send('OK');
+    res.status(404).json({});
 });
 
 var server = app.listen(3000, function () {

@@ -69,12 +69,32 @@ describe('Teste da API', function() {
 			  function(error, response_head, response_body){
 				(error==null).should.be.true;
 				(response_head.statusCode).should.be.equal(200);
-				done();
+				estado_computado = JSON.parse(response_body);
+				(estado_computado).should.have.property('nome', estado_esperado.nome);
+				(estado_computado).should.have.property('estado', estado_esperado.estado);
+				// (estado_computado).should.have.properties(estado_esperado);
+				// mais detalhado para ter mensagens de erro em separado
 			});
-	// 			// .expect(body)
-				// body.nome.should.be.equal(estado_esperado.nome);
-				// body.estado.should.be.equal(estado_esperado.estado);
+
+			request(url + path + tabuleiro_nome + acao,
+			  function(error, response_head, response_body){
+				(error==null).should.be.true;
+				(response_head.statusCode).should.be.equal(404);
+			});
+
+			done();
 		});
+
+	it('Teste de resposta de inexistente jogo finalizado', function(done) {
+		var acao = '/finalizar';
+
+		request(url + path + 'tabuleiro_nome' + acao,
+		function(error, response_head, response_body){
+			(error==null).should.be.true;
+			(response_head.statusCode).should.be.equal(404);
+			done();
+		});
+	});
 
 	});
 });
