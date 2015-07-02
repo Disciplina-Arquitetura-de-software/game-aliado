@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "servidor-inicie": "node_modules/.bin/supervisor src/api.js",
-    "inicialize": "npm install supervisor should express jscs jshint istanbul mocha supertest --save",
+    "inicialize": "npm install supervisor should express jscs jshint istanbul mocha request --save",
     "test": "node_modules/.bin/mocha --recursive --reporter spec",
     "teste-model": "node_modules/.bin/mocha --recursive --reporter spec test/model"
   },
