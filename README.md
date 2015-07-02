@@ -10,4 +10,4 @@
 
 [Histórico de iteração](https://github.com/Disciplina-Arquitetura-de-software/game-aliado/wiki/Iteracoes)
 
-[Guia do desenvolvedor](https://github.com/Disciplina-Arquitetura-de-software/game-aliado/wiki/guias/desenvolvedor)
+[Guia do desenvolvedor](https://github.com/Disciplina-Arquitetura-de-software/game-aliado/wiki/guia-desenvolvedor)
