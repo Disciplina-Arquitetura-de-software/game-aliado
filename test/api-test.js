@@ -97,4 +97,32 @@ describe('Teste da API', function() {
 	});
 
 	});
+
+	describe('Testando o jogar dados para definir jogador inicial', function() {
+		var path = "/exemplo";
+
+		it('jogador jogar dados para definir jogador inicial considerando fim de rodada', function(done) {
+			var acao = '/jogar_dados';
+
+			var request_options = {
+				url : url + path + acao,
+				headers : {},
+				form : {}
+			};
+
+			request.post(request_options, function(error, response_head, response_body){
+				(error==null).should.be.true;
+				(response_head.statusCode).should.be.equal(404);
+				var estado_esperado = {
+					"fim_rodada": "sim",
+					"jogador_inicial" : "0000"
+				};
+				var estado_computado = JSON.parse(response_body);
+				estado_computado.should.have.property("fim_rodada", estado_esperado.fim_rodada);
+				estado_computado.should.have.property("jogador_inicial", estado_esperado.jogador_inicial);
+				done();
+			});
+		});
+	});
+
 });
