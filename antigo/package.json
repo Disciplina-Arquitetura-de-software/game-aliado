@@ -4,15 +4,17 @@
   "description": "Projeto exemplo da disciplina arquitetura de software de 2015.1",
   "main": "index.js",
   "scripts": {
-    "servidor": "nodemon server.js",
-    "test": "node_modules/.bin/mocha --recursive --reporter spec",
+    "servidor-inicie": "node_modules/.bin/supervisor server.js",
+    "inicialize": "npm install supervisor should express jscs jshint istanbul mocha request --save",
+    "test": "node_modules/.bin/mocha --recursive --reporter spec test/new",
+    "test-old": "node_modules/.bin/mocha --recursive --reporter spec",
     "teste-model": "node_modules/.bin/mocha --recursive --reporter spec test/model"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Disciplina-Arquitetura-de-software/game-aliado.git"
   },
-  "author": "Disciplina-Arquitetura-de-Software",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Disciplina-Arquitetura-de-software/game-aliado/issues"
@@ -21,8 +23,13 @@
   "dependencies": {
     "express": "^4.13.1",
     "express-load": "^1.1.15",
+    "istanbul": "^0.3.17",
+    "jscs": "^1.13.1",
+    "jshint": "^2.8.0",
     "mocha": "^2.2.5",
-    "request": "^2.61.0",
-    "should": "^7.0.4"
+    "request": "^2.60.0",
+    "should": "^6.0.3",
+    "supertest": "^1.0.1",
+    "supervisor": "^0.6.0"
   }
 }

@@ -49,4 +49,5 @@ var server = app.listen(3000, function () {
     const port = server.address().port;
 
     console.log('Jogo Aliado... listening at http://%s:%s', host, port);
+    console.log(app._router.stack);
 });

@@ -5,16 +5,17 @@ const assert = require("should");
 const url = 'http://localhost:3000';
 
 describe('Teste da API', function() {
-	describe('Teste de ambiente', function () {
-		var path = '/';
-		it('Deve retornar estado 200 na URL /', function (done) {
-			request(url, function(error, response, body) {
-				(error==null).should.be.true;
-				(response.statusCode).should.be.equal(200);
-				done();
-			});
-		});
-	});
+	// TRANSFERIDO para new/servidor-test.js
+	// describe('Teste de ambiente', function () {
+	// 	var path = '/';
+	// 	it('Deve retornar estado 200 na URL /', function (done) {
+	// 		request(url, function(error, response, body) {
+	// 			(error==null).should.be.true;
+	// 			(response.statusCode).should.be.equal(200);
+	// 			done();
+	// 		});
+	// 	});
+	// });
 
 	describe('Testando o estado de um jogo', function() {
 		var path = '/api/';
