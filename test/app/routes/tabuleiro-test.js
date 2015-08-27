@@ -18,7 +18,7 @@ describe('API : Teste das rotas', function() {
 	});
 
 	it('Teste de resposta 200 para um novo tabuleiro', function(done) {
-		var acao = '/novo';
+		var acao = '/criar';
 
 		request(url + tabuleiro_nome + acao,
 		  function(error, response, body) {
