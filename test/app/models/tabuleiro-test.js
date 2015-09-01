@@ -6,13 +6,13 @@ const assert = require("should");
 describe('Tabuleiro : Teste de classe', function () {
 
     it('Verificando a nova instancia diferente de null', function (done) {
-        var computado = new Tabuleiro('exemplo');
+        var computado = new Tabuleiro({nome:'exemplo'});
         (computado != null).should.be.true;
         done();
     });
 
     it('Verificar se a nova instancia é do tipo Tabuleiro', function (done) {
-        var computado = new Tabuleiro('exemplo');
+        var computado = new Tabuleiro({nome:'exemplo'});
         computado.should.be.an.instanceOf(Tabuleiro);
         done();
     });
@@ -26,7 +26,7 @@ describe('Tabuleiro : Teste de classe', function () {
             'rodadas': 0
         });
 
-        var computado = JSON.stringify(new Tabuleiro('exemplo'));
+        var computado = JSON.stringify(new Tabuleiro({nome:'exemplo'}));
 
         computado.should.be.equal(esperado);
         done();

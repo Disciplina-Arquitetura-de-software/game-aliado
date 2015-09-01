@@ -5,17 +5,19 @@ const assert = require("should");
 
 describe('Peca : Teste de classe', function () {
 
-    const jogador = null;
-    const tabuleiro = null;
+    const obj_jogador = null;
+    const obj_tabuleiro = null;
 
     it('Verificando a nova instancia diferente de null', function (done) {
-        var computado = new Peca(jogador, tabuleiro);
+        var computado = new Peca(
+            {jogador: obj_jogador, tabuleiro: obj_tabuleiro});
         (computado != null).should.be.true;
         done();
     });
 
     it('Verificar se a nova instancia é do tipo Tabuleiro', function (done) {
-        var computado = new Peca(jogador, tabuleiro);
+        var computado = new Peca(
+            {jogador: obj_jogador, tabuleiro: obj_tabuleiro});
         computado.should.be.an.instanceOf(Peca);
         done();
     });
@@ -28,7 +30,8 @@ describe('Peca : Teste de classe', function () {
             'posicao': [null, null]
         });
 
-        var computado = JSON.stringify(new Peca(jogador, tabuleiro));
+        var computado = JSON.stringify(new Peca(
+            {jogador: obj_jogador, tabuleiro: obj_tabuleiro}));
 
         computado.should.be.equal(esperado);
         done();

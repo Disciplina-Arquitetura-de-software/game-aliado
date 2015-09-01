@@ -1,7 +1,7 @@
 // app/models/jogador.js
 
-module.exports = function Jogador(nome, email) {
-  this.nome = nome;
-  this.email = email;
+module.exports = function Jogador(atributos) {
+  this.nome = atributos.nome || null;
+  this.email = atributos.email || null;
   this.tabuleiro = null;
 };

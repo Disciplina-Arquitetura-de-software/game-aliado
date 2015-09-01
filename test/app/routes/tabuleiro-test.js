@@ -4,7 +4,7 @@ const assert = require("should");
 const url = 'http://localhost:3000/api/';
 const tabuleiro_nome = 'exemplo';
 
-describe('API : Teste das rotas', function() {
+describe('API / Tabuleiro : Teste das rotas', function() {
 
 	it('Teste de resposta 200 para o estado do tabuleiro', function(done) {
 		var acao = '/';

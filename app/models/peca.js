@@ -1,8 +1,8 @@
 // app/models/peca.js
 
-module.exports = function Peca(jogador, tabuleiro) {
-  this.ID = null;
-  this.tabuleiro = tabuleiro;
-  this.jogador = jogador;
-  this.posicao = [null, null];
+module.exports = function Peca(atributos) {
+    this.ID = null;
+    this.tabuleiro = atributos.tabuleiro;
+    this.jogador = atributos.jogador;
+    this.posicao = [null, null];
 };
