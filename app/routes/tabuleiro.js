@@ -7,5 +7,5 @@ module.exports = function(app) {
 	app.get('/api/:tabuleiro/criar',
 		controller.criar_tabuleiro);
 	app.get('/api/:tabuleiro/iniciar',
-			controller.criar_tabuleiro);
+			controller.iniciar_jogo);
 };

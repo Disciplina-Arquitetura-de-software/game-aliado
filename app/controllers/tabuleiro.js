@@ -38,5 +38,23 @@ module.exports = function(app) {
 		});
 	};
 
+	controller.iniciar_jogo = function(req, res) {
+			var jogadores = ['0000','0018','1818','1800'];
+
+			var novo = new Tabuleiro({nome: req.params.tabuleiro,estado:'jogando',
+														jogador_da_vez:'0000',jogadores: jogadores, rodadas:1});
+														
+			tabuleiros.push(novo);
+
+			res.status(200).json(novo);
+
+			return
+
+			res.status(404).send({
+				resultado: 'erro',
+				erro: 'Tabuleiro inexistente'
+			});
+	};
+
     return controller;
 };

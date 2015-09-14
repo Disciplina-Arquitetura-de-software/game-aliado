@@ -67,4 +67,33 @@ describe('API / Tabuleiro : Teste do controlador', function() {
 		});
 	});
 
+	describe('CRIAR Teste de iniciar jogo', function() {
+
+		it('\n\tTestando o tabuleiro JSON iniciar o jogo', function(done) {
+			var acao = '/iniciar';
+
+			var esperado = {
+					nome: 'exemplo',
+					estado: 'jogando',
+					jogador_da_vez: '0000',
+					jogadores: ['0000','0018','1818','1800'],
+					rodadas: 1
+			};
+
+			//request(url + tabuleiro_nome + acao,
+			//  function(error, response, body){});
+
+			request(url + tabuleiro_nome + acao,
+			  function(error, response, body){
+				(error==null).should.be.true;
+				(response.statusCode).should.be.equal(200);
+				estado_computado = JSON.parse(body);
+				estado_computado.should.have
+					.properties(esperado);
+				// body.should.be.equal(esperado);
+				done();
+			});
+		});
+	});
+
 });
