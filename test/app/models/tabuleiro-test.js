@@ -26,7 +26,28 @@ describe('Tabuleiro : Teste de classe', function () {
             'rodadas': 0
         });
 
-        var computado = JSON.stringify(new Tabuleiro({nome:'exemplo'}));
+        var computado = JSON.stringify(new Tabuleiro({nome:'exemplo',estado:'novo',
+                                                      jogador_da_vez:'0000',jogadores: {},
+                                                      rodadas:0}));
+
+        computado.should.be.equal(esperado);
+        done();
+    });
+
+    it('verificar o estado do tabuleiro para iniciar com 4 jogadores', function(done) {
+        var esperado = JSON.stringify({
+            'nome': 'exemplo',
+            'estado': 'jogando',
+            'jogador_da_vez': '0000',
+            'jogadores': ['0000','0018','1818','1800'],
+            'rodadas': 1
+        });
+
+        var jogadores = ['0000','0018','1818','1800'];
+
+        var computado = JSON.stringify(new Tabuleiro({nome:'exemplo',estado:'jogando',
+                                                      jogador_da_vez:'0000',jogadores: jogadores,
+                                                      rodadas:1}));
 
         computado.should.be.equal(esperado);
         done();

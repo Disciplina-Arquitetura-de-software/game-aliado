@@ -29,7 +29,8 @@ module.exports = function(app) {
 	};
 
 	controller.criar_tabuleiro = function(req, res) {
-		var novo = new Tabuleiro({nome: req.params.tabuleiro});
+		var novo = new Tabuleiro({nome: req.params.tabuleiro,estado:'novo',
+															jogador_da_vez:'0000',jogadores: {},rodadas:0});
 		tabuleiros.push(novo);
 
 	    res.status(200).send({

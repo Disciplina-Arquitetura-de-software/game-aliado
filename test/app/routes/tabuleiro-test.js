@@ -28,4 +28,15 @@ describe('API / Tabuleiro : Teste das rotas', function() {
 		});
 	});
 
+	it('Teste de resposta 200 para iniciar jogo', function(done) {
+		var acao = '/iniciar';
+
+		request(url + tabuleiro_nome + acao,
+		  function(error, response, body) {
+			(error==null).should.be.true;
+			(response.statusCode).should.be.equal(200);
+			done();
+		});
+	});
+
 });
