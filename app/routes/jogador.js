@@ -4,6 +4,8 @@ module.exports = function(app) {
 
 	app.get('/api/jogador/:nome',
 		controller.estado);
+	app.get('/api/jogador/:nome/moverficha/:dado1/:dado2',
+		controller.moverficha);
 	app.post('/api/jogador/autenticar',
 		controller.autenticar);
 };

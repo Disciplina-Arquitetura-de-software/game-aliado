@@ -10,11 +10,16 @@ module.exports = function(app) {
     };
 
     controller.autenticar = function(req, res) {
-        console.log("Cookies: ", req.cookies);
         res.status(200).json({
             resultado: "autenticado"
         });
     };
+
+    controller.moverficha = function(req, res){
+        res.status(200).send({
+            resultado: 'ok'
+        });
+    }
 
     return controller;
 };

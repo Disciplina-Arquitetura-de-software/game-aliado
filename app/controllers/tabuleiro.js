@@ -5,7 +5,6 @@ module.exports = function(app) {
 	var tabuleiros = [];
 	var Tabuleiro = require('../models/tabuleiro.js');
 	var Jogador = require('../models/jogador.js');
-	// var Tabuleiro = app.models.tabuleiro;
 
 	controller.recuperar_tabuleiro = function(req, res) {
 

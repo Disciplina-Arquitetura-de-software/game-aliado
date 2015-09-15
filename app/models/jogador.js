@@ -1,4 +1,5 @@
 // app/models/jogador.js
+var Peca = require("./peca.js");
 
 function Jogador(atributos) {
   this.nome = atributos.nome || null;
@@ -8,7 +9,12 @@ function Jogador(atributos) {
 }
 
 Jogador.prototype.gerar_pecas = function(atributos){
-	this.pecas = [];
+	for (var i = 0; i < 4; i++) {
+		this.pecas.push(new Peca({
+			id: i,
+			jogador: this.nome
+		}));
+	};	
 }
 
 module.exports = Jogador;

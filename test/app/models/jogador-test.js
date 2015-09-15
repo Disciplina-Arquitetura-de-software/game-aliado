@@ -7,14 +7,14 @@ describe('Jogador : Teste de classe', function () {
 
     it('Verificando a nova instancia diferente de null', function (done) {
         var computado = new Jogador(
-            {nome:'exemplo',email:'exemplo@gmail.com'});
+                                    {nome:'exemplo',email:'exemplo@gmail.com'});
         (computado != null).should.be.true;
         done();
     });
 
     it('Verificar a nova instancia é do tipo Jogador', function (done) {
         var computado = new Jogador(
-            {nome:'exemplo',email:'exemplo@gmail.com'});
+                                    {nome:'exemplo',email:'exemplo@gmail.com'});
         computado.should.be.an.instanceOf(Jogador);
         done();
     });
@@ -28,7 +28,7 @@ describe('Jogador : Teste de classe', function () {
         });
 
         var computado = JSON.stringify(
-            new Jogador({nome:'exemplo',email:'exemplo@gmail.com'}));
+                                       new Jogador({nome:'exemplo',email:'exemplo@gmail.com'}));
 
         computado.should.be.equal(esperado);
         done();
@@ -43,7 +43,7 @@ describe('Jogador : Teste de classe', function () {
         });
 
         var computado = JSON.stringify(
-            new Jogador({}));
+                                       new Jogador({}));
 
         computado.should.be.equal(esperado);
         done();
@@ -51,10 +51,21 @@ describe('Jogador : Teste de classe', function () {
 
     it('Teste gerar peças', function(done){
         var esperado = JSON.stringify({
-            'nome': null,
+            'nome': 'jogador_teste',
             'email': null,
             'tabuleiro': null,
-            'pecas':[]
+            'pecas':[{ID: 0, jogador: 'jogador_teste', posicao: [null, null]},
+                    {ID: 1, jogador: 'jogador_teste', posicao: [null, null]},
+                    {ID: 2, jogador: 'jogador_teste', posicao: [null, null]},
+                    {ID: 3, jogador: 'jogador_teste', posicao: [null, null]}]
         });
+
+        var jogador = new Jogador({
+            nome: 'jogador_teste'
+        });
+        jogador.gerar_pecas();
+
+        JSON.stringify(jogador).should.be.equal(esperado);
+        done();
     });
 });
