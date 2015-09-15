@@ -6,4 +6,6 @@ module.exports = function(app) {
 		controller.recuperar_tabuleiro);
 	app.get('/api/:tabuleiro/criar',
 		controller.criar_tabuleiro);
+	app.get('/api/:tabuleiro/adicionar/:jogador',
+		controller.adicionar_jogador);
 };

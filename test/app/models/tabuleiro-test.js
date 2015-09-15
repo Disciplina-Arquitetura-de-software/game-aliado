@@ -22,7 +22,7 @@ describe('Tabuleiro : Teste de classe', function () {
             'nome': 'exemplo',
             'estado': 'novo',
             'jogador_da_vez': '0000',
-            'jogadores': {},
+            'jogadores': [],
             'rodadas': 0
         });
 

@@ -1,9 +1,6 @@
 
 module.exports = function(app) {
     var controller = {};
-    var tabuleiros = [];
-    var Tabuleiro = require('../models/tabuleiro.js');
-    // var Tabuleiro = app.models.tabuleiro;
 
     controller.estado = function(req, res) {
         res.status(200).json({

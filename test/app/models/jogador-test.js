@@ -23,7 +23,8 @@ describe('Jogador : Teste de classe', function () {
         var esperado = JSON.stringify({
             'nome': 'exemplo',
             'email': 'exemplo@gmail.com',
-            'tabuleiro': null
+            'tabuleiro': null,
+            'pecas':[]
         });
 
         var computado = JSON.stringify(
@@ -37,7 +38,8 @@ describe('Jogador : Teste de classe', function () {
         var esperado = JSON.stringify({
             'nome': null,
             'email': null,
-            'tabuleiro': null
+            'tabuleiro': null,
+            'pecas':[]
         });
 
         var computado = JSON.stringify(
@@ -45,5 +47,14 @@ describe('Jogador : Teste de classe', function () {
 
         computado.should.be.equal(esperado);
         done();
+    });
+
+    it('Teste gerar peças', function(done){
+        var esperado = JSON.stringify({
+            'nome': null,
+            'email': null,
+            'tabuleiro': null,
+            'pecas':[]
+        });
     });
 });

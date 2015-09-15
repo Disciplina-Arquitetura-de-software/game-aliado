@@ -28,4 +28,16 @@ describe('API / Tabuleiro : Teste das rotas', function() {
 		});
 	});
 
+	it('Teste de resposta 200 para adicionar um jogador', function(done) {
+		var acao = '/adicionar';
+		var jogador = "/jogador_teste";
+
+		request(url + tabuleiro_nome + acao + jogador,
+		  function(error, response, body) {
+			(error==null).should.be.true;
+			(response.statusCode).should.be.equal(200);
+			done();
+		});
+	});
+
 });

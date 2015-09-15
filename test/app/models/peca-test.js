@@ -15,7 +15,7 @@ describe('Peca : Teste de classe', function () {
         done();
     });
 
-    it('Verificar se a nova instancia é do tipo Tabuleiro', function (done) {
+    it('Verificar se a nova instancia é do tipo Peça', function (done) {
         var computado = new Peca(
             {jogador: obj_jogador, tabuleiro: obj_tabuleiro});
         computado.should.be.an.instanceOf(Peca);
