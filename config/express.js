@@ -13,9 +13,9 @@ module.exports = function() {
 	// 	.then('controllers')
 	// 	.then('routes')
 	// 	.into(app);
-	load('models', {cwd: 'app'}).into(app);
-	load('controllers', {cwd: 'app'}).into(app);
-	load('routes', {cwd: 'app'}).into(app);
+	load('controllers', {cwd: 'app'})
+		.then('routes')
+		.into(app);
 
 	return app;
 }
